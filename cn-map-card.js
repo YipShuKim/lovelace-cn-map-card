@@ -78,7 +78,8 @@ class GaodeMapCard extends HTMLElement {
   connectedCallback(){
     // console.log(this.config);
     this._loadMap({
-      key: this.config.key||"ce3b1a3a7e67fc75810ce1ba1f83c01a",   // 申请好的Web端开发者Key，首次调用 load 时必填 f87e0c9c4f3e1e78f963075d142979f0
+      key: this.config.key||"39a46eecae24badd5b51d057d644a3e2",   // 申请好的Web端开发者Key，首次调用 load 时必填 f87e0c9c4f3e1e78f963075d142979f0
+      securityJsCode: this.config.jscode||"xxxxx",                                                     
       version: "2.0",   // 指定要加载的 JSAPI 的版本，缺省时默认为 1.4.15
       plugins: ['AMap.MoveAnimation'] //插件列表
     });
