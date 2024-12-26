@@ -265,7 +265,9 @@ class GaodeMapCard extends HTMLElement {
       AMap.convertFrom(gps, type, function (status, result) {
         // console.info(result.locations[0])
         if (result.info === 'ok') {
-          that._showMarker(result.locations[0],entity,color,type);
+           that._showMarker(result.locations[0],entity,color,type); } 
+        else { 
+          console.info("%c 地图加载异常:%o", "color: white; font-weight: bold; background: dimgray",result); 
         }
       });
     }
@@ -590,6 +592,16 @@ export class GaodeMapCardEditor extends LitElement {
             @value-changed="${this._valueChanged}"
           ></paper-input>
         </div>
+
+        <div class="gaode_jscode">
+          <paper-input
+            label="${this.hass.localize("component.airvisual.config.step.user.data.api_jscode")}"
+            .value="${this.config.jscode}"
+            .configValue="${"key"}"
+            @value-changed="${this._valueChanged}"
+          ></paper-input>
+        </div>
+        
       </div>
       <datalist id="browsers">
       ${Object.keys(this.hass.states).filter(a => patt.test(a) ).map(entId => html`
