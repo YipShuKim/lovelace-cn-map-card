@@ -598,7 +598,7 @@ export class GaodeMapCardEditor extends LitElement {
           <paper-input
             label="${this.hass.localize("component.airvisual.config.step.user.data.api_jscode")}"
             .value="${this.config.jscode}"
-            .configValue="${"key"}"
+            .configValue="${"jscode"}"
             @value-changed="${this._valueChanged}"
           ></paper-input>
         </div>
